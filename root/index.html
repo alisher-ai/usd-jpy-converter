@@ -18,11 +18,6 @@
             const usdAmount = document.getElementById('usdAmount').value;
             const apiUrl = 'https://api.exchangerate-api.com/v4/latest/USD';
 
-            if (!usdAmount) {
-                document.getElementById('result').innerText = 'Please enter an amount';
-                return;
-            }
-
             try {
                 const response = await fetch(apiUrl);
                 const data = await response.json();
