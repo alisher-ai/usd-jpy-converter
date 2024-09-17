@@ -12,10 +12,8 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-1KPL33YP3N');
     </script>
-
 </head>
 <body>
     <h1>USD to JPY Conversion</h1>
@@ -28,6 +26,11 @@
         async function convertCurrency() {
             const usdAmount = document.getElementById('usdAmount').value;
             const apiUrl = 'https://api.exchangerate-api.com/v4/latest/USD';
+
+            if (!usdAmount) {
+                document.getElementById('result').innerText = 'Please enter an amount';
+                return;
+            }
 
             try {
                 const response = await fetch(apiUrl);
